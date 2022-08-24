@@ -79,10 +79,11 @@ const characters = data.map(function(element) {
 
   // je crée un nouvel objet avec les informations transformées
   const transformedElement = {
-    name: element.firstname + ' ' + element.lastname,
+    //name: element.firstname + ' ' + element.lastname,
     // syntaxe ES6, template string (littéral de gabarit)
     // ` backtick : au début et à la fin
     // ${} pour une information à remplacer
+    name: `${element.firstname} ${element.lastname}`,
    
     // avec variable intermédiaire
     //young: isYoung
