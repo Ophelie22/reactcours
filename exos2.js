@@ -10,6 +10,8 @@ Objectifs
 - Une propriété "young" qui contiendrait un booléen : 
   `true` quand le personnage a moins de 50 ans, sinon `false`
 - Les autres données sont inutiles, on ne les conserve pas
+
+
 Notions
 -------
 - Array : map
@@ -60,21 +62,33 @@ const data = [
 // la callback doit retourner une valeur => c'est cette valeur qui sera placée dans
 // le nouveau tableau
 
+// fléchée : nouvelle syntaxe ES6 pour les fonctions :
+// - enlever le mot "function"
+// - ajouter une => avant le corps de la fonction (avant "{" )
+
 const characters = data.map(function(element) {
   // console.log(element); // chaque élément du tableau, successivement
 
   // calcul pour young
-  let isYoung;
-  if (element.age < 50) {
-    isYoung = true;
-  } else {
-    isYoung = false;
-  }
+  //let isYoung;
+ // if (element.age < 50) {
+ //   isYoung = true;
+  //} else {
+   // isYoung = false;
+  //}
 
   // je crée un nouvel objet avec les informations transformées
   const transformedElement = {
     name: element.firstname + ' ' + element.lastname,
-    young: isYoung
+    // syntaxe ES6, template string (littéral de gabarit)
+    // ` backtick : au début et à la fin
+    // ${} pour une information à remplacer
+   
+    // avec variable intermédiaire
+    //young: isYoung
+    / sans variable intermédiaire
+    // ternaire : (condition ? valeur si vrai : valeur si faux)
+    young: (element.age < 50 ? true : false)
   };
 
   // return /* l'élément transformé */
